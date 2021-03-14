@@ -1,0 +1,17 @@
+<p><a href="/members">All Members</a></p>
+
+<h1>New Member</h1>
+
+<% if @messages %>
+  <ul>
+    <% @messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/members" method="post">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" value="<%= @member.name %>">
+  <input type="submit" value="Save">
+</form>
